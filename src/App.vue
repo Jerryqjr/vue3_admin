@@ -1,30 +1,38 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <el-button type="primary">按我</el-button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <div>
+    <el-button :icon="Search" circle />
+    <el-button type="primary" :icon="Edit" circle />
+    <el-button type="success" :icon="Check" circle />
+    <el-button type="info" :icon="Message" circle />
+    <el-button type="warning" :icon="Star" circle />
+    <el-button type="danger" :icon="Delete" circle />
+  </div>
+  <svg-icon name="home" color="red" width="100px" height="100px"></svg-icon>
+  <h1>哈哈</h1>
 </template>
+<script setup lang="ts">
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
+import SvgIcon from './components/SvgIcon/index.vue';
+console.log(import.meta.env)
+</script>
+<style scoped lang="scss">
+.el-button {
+  margin: 10px;
+}
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+div {
+  h1 {
+    color: $color;
+  }
 }
 </style>
