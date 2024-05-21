@@ -12,7 +12,7 @@ const app = createApp(App)
 app.use(ElementPlus, { locale: zhCn })
 app.mount("#app")
 
-//测试代码:测试假的接口能否使用
+/* //测试代码:测试假的接口能否使用
 import axios from "axios"
 axios({
   url: "/api/user/login",
@@ -21,4 +21,4 @@ axios({
     username: "admin",
     password: "111111",
   },
-})
+}) */

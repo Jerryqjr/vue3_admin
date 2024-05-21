@@ -23,7 +23,20 @@ import {
   Star,
 } from '@element-plus/icons-vue'
 import SvgIcon from './components/SvgIcon/index.vue';
-console.log(import.meta.env)
+// console.log(import.meta.env)
+import request from '@/utils/request';
+import { onMounted } from 'vue';
+//当组件挂载完毕时测试发一个请求
+onMounted(() => {
+  request({
+    url: '/user/login',
+    method: 'post',
+    data: {
+      username: 'admin',
+      password: '111111'
+    }
+  }).then(res => { console.log(res) })
+})
 </script>
 <style scoped lang="scss">
 .el-button {
