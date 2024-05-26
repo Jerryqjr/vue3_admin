@@ -8,8 +8,14 @@ import "element-plus/dist/index.css"
 import zhCn from "element-plus/es/locale/lang/zh-cn"
 import "virtual:svg-icons-register"
 
+//引入路由
+import router from "./router"
+
 const app = createApp(App)
+//安装自定义插件
 app.use(ElementPlus, { locale: zhCn })
+//注册模版路由
+app.use(router)
 app.mount("#app")
 
 /* //测试代码:测试假的接口能否使用
