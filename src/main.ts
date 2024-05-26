@@ -11,11 +11,16 @@ import "virtual:svg-icons-register"
 //引入路由
 import router from "./router"
 
+//引入仓库
+import pinia from "./store"
 const app = createApp(App)
 //安装自定义插件
 app.use(ElementPlus, { locale: zhCn })
 //注册模版路由
 app.use(router)
+
+//安装仓库
+app.use(pinia)
 app.mount("#app")
 
 /* //测试代码:测试假的接口能否使用
