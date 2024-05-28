@@ -3,12 +3,13 @@ import { defineStore } from "pinia"
 //引入接口
 import { reqLogin } from "@/api/user/index"
 //引入数据类型
-import type { loginForm } from "@/api/user/type"
+import type { loginForm, loginResponseData } from "@/api/user/type"
+import { UserState } from "./types/type"
 
 //创建用户相关的小仓库
 const useUserStore = defineStore("User", {
   // State 定义 store 的初始状态
-  state: () => {
+  state: (): UserState => {
     return {
       token: localStorage.getItem("TOKEN"), //用户唯一标识token
     }
@@ -17,7 +18,7 @@ const useUserStore = defineStore("User", {
   actions: {
     //用户登录方法
     async useLogin(data: loginForm) {
-      const result = await reqLogin(data)
+      const result: loginResponseData = await reqLogin(data)
       console.log(result)
       //登录请求:成功200->token
       //登录请求:失败201->登录失败错误的信息
