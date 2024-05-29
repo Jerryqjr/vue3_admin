@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="logo" v-if="setting.logoHidden">
+    <div class="logo" v-if="setting.logoShow">
         <img :src="setting.logo" alt="">
         <p>{{ setting.title }}</p>
     </div>

@@ -5,6 +5,8 @@ import { reqLogin } from "@/api/user/index"
 //引入数据类型
 import type { loginForm, loginResponseData } from "@/api/user/type"
 import { UserState } from "./types/type"
+//引入路由(常量路由)
+import { constantRoute } from "@/router/routes"
 
 //创建用户相关的小仓库
 const useUserStore = defineStore("User", {
@@ -12,6 +14,7 @@ const useUserStore = defineStore("User", {
   state: (): UserState => {
     return {
       token: localStorage.getItem("TOKEN"), //用户唯一标识token
+      menuRoutes: constantRoute, //仓库存储生成菜单需要数组(路由)
     }
   },
   // Actions 定义操作方法
