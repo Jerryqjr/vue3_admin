@@ -16,13 +16,17 @@
         <el-container>
             <el-header>2</el-header>
             <!-- 内容展示区域 -->
-            <el-main>3</el-main>
+            <el-main>
+                <routerview></routerview>
+            </el-main>
         </el-container>
     </el-container>
 </template>
 <script setup lang="ts">
 import Logo from '@/layout/logo/logo.vue'
 import Menus from '@/layout/menu/index.vue'
+//重新封装的routerview
+import routerview from './main/index.vue'
 
 //获取用户相关的小仓库
 import useUserStore from "@/store/modules/user";
