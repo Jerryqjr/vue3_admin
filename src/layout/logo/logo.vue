@@ -5,7 +5,7 @@
         <p>{{ setting.title }}</p>
     </div>
 </template>
-<script setup lang="ts">
+<script setup lang="ts" name="Logo">
 //引入设置标题与logo位置配置文件
 import setting from '@/setting'
 </script>
@@ -25,6 +25,7 @@ import setting from '@/setting'
     p {
         font-size: $base-logo-title-fontsize;
         margin-left: 10px;
+        white-space: nowrap;
     }
 }
 </style>

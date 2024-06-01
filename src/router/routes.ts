@@ -49,7 +49,7 @@ export const constantRoute = [
     component: () => import("@/views/screen/index.vue"),
     name: "Screen",
     meta: {
-      title: "数据大屏",
+      title: "金融工具",
       hidden: false,
       icon: "Platform",
     },
@@ -59,7 +59,7 @@ export const constantRoute = [
     component: () => import("@/layout/index.vue"),
     name: "Acl",
     meta: {
-      title: "权限管理",
+      title: "公告信息",
       hidden: false,
       icon: "Lock",
     },
@@ -79,7 +79,7 @@ export const constantRoute = [
         component: () => import("@/views/acl/role/index.vue"),
         name: "AclRole",
         meta: {
-          title: "用户管理",
+          title: "角色管理",
           hidden: false,
           icon: "UserFilled",
         },
@@ -102,7 +102,7 @@ export const constantRoute = [
     component: () => import("@/layout/index.vue"),
     name: "Product",
     meta: {
-      title: "商品管理",
+      title: "理财产品",
       hidden: false,
       icon: "Goods",
     },
@@ -151,6 +151,26 @@ export const constantRoute = [
     ],
   },
 
+  {
+    path: "/screen",
+    component: () => import("@/views/screen/index.vue"),
+    name: "Screen",
+    meta: {
+      title: "个人中心",
+      hidden: false,
+      icon: "User",
+    },
+  },
+  {
+    path: "/screen",
+    component: () => import("@/views/screen/index.vue"),
+    name: "Screen",
+    meta: {
+      title: "客服",
+      hidden: false,
+      icon: "ChatDotRound",
+    },
+  },
   //任意路由
   {
     path: "/:pathMatch(.*)*",

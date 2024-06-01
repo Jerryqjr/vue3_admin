@@ -2,7 +2,8 @@ import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import path from "path"
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
-
+//引入vite-plugin-vue-setup-extend
+import vueSetupExtend from "vite-plugin-vue-setup-extend"
 import { UserConfigExport, ConfigEnv } from "vite"
 import { viteMockServe } from "vite-plugin-mock"
 import vue from "@vitejs/plugin-vue"
@@ -10,6 +11,7 @@ import vue from "@vitejs/plugin-vue"
 export default defineConfig({
   plugins: [
     vue(),
+    vueSetupExtend(),
     createSvgIconsPlugin({
       // Specify the icon folder to be cached
       iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
