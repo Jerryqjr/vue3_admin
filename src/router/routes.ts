@@ -16,7 +16,7 @@ export const constantRoute = [
     component: () => import("@/layout/index.vue"),
     name: "home",
     meta: {
-      title: "layout",
+      title: "",
       hidden: false,
       icon: "Avatar",
     },
@@ -59,10 +59,11 @@ export const constantRoute = [
     component: () => import("@/layout/index.vue"),
     name: "Acl",
     meta: {
-      title: "公告信息",
+      title: "权限管理",
       hidden: false,
       icon: "Lock",
     },
+    redirect: "/acl/user",
     children: [
       {
         path: "/acl/user",
@@ -102,7 +103,7 @@ export const constantRoute = [
     component: () => import("@/layout/index.vue"),
     name: "Product",
     meta: {
-      title: "理财产品",
+      title: "业务管理",
       hidden: false,
       icon: "Goods",
     },
@@ -151,26 +152,6 @@ export const constantRoute = [
     ],
   },
 
-  {
-    path: "/screen",
-    component: () => import("@/views/screen/index.vue"),
-    name: "Screen",
-    meta: {
-      title: "个人中心",
-      hidden: false,
-      icon: "User",
-    },
-  },
-  {
-    path: "/screen",
-    component: () => import("@/views/screen/index.vue"),
-    name: "Screen",
-    meta: {
-      title: "客服",
-      hidden: false,
-      icon: "ChatDotRound",
-    },
-  },
   //任意路由
   {
     path: "/:pathMatch(.*)*",

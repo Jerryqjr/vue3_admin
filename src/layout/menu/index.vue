@@ -13,7 +13,7 @@
         </el-menu-item>
         <!-- 有子路由,但只有一个 -->
         <el-menu-item v-if="item.children && item.children.length == 1 && !item.meta.hidden"
-            :item="item.children[0].path">
+            :index="item.children[0].path">
             <el-icon>
                 <component :is="item.children[0].meta.icon"></component>
             </el-icon>
