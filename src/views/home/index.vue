@@ -11,8 +11,7 @@ import { onMounted } from 'vue';
 import useUserStore from '@/store/modules/user';
 let userStore = useUserStore()
 onMounted(() => {
-    console.log(userStore.userInfo());
-
+    userStore.userInfo();
 })
 </script>
 <style scoped></style>

@@ -7,7 +7,7 @@ import type { loginForm, loginResponseData } from "@/api/user/type"
 import { UserState } from "./types/type"
 //引入路由(常量路由)
 import { constantRoute } from "@/router/routes"
-import { GET_TOKEN } from "@/utils/token"
+import { GET_TOKEN, REMOVE_TOKEN, SET_TOKEN } from "@/utils/token"
 //创建用户相关的小仓库
 const useUserStore = defineStore("User", {
   // State 定义 store 的初始状态
@@ -19,7 +19,7 @@ const useUserStore = defineStore("User", {
       avatar: "",
     }
   },
-  // Actions 定义操作方法
+  // Actions 定义操作方法(异步)
   actions: {
     //用户登录方法
     async useLogin(data: loginForm) {
@@ -32,7 +32,7 @@ const useUserStore = defineStore("User", {
         //由于pinia|vuex存储数据其实利用js对象
         this.token = result.data.token
         //本地存储持久化一份
-        localStorage.setItem("TOKEN", result.data.token)
+        SET_TOKEN(result.data.token)
         return "ok"
       } else {
         return Promise.reject(new Error(result.data.message))
@@ -47,6 +47,12 @@ const useUserStore = defineStore("User", {
         this.username = result.data.checkUser.username
         this.avatar = result.data.checkUser.avatar
       }
+    },
+    //退出登录
+    async userLogout() {
+      //目前没有mock接口:退出登录接口(通知服务器本次用户的唯一标识失效)
+      ;(this.token = ""), (this.username = ""), (this.avatar = "")
+      REMOVE_TOKEN()
     },
   },
   // Getters 定义计算属性

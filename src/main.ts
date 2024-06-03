@@ -20,6 +20,8 @@ const app = createApp(App)
 app.use(ElementPlus, { locale: zhCn })
 //注册模版路由
 app.use(router)
+//映入路由鉴权文件
+import "@/router/permission"
 //注册全局组件
 app.use(globalComponent)
 
